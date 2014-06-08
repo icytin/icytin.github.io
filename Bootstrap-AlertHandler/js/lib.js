@@ -1,25 +1,25 @@
-var BoxHandler = function () {
+var AlertHandler = function () {
 
     var self;
 
     return {
-			BoxType: {
+			AlertType: {
 				Success: 0,
 				Warning: 1,
 				Error: 2,
 				Info: 3
 			},
-			getBox: function (boxType, title, message, closable) {
-					var boxclass = boxType === this.BoxType.Warning ? 'alert-warning ' : boxType === this.BoxType.Success ? 'alert-success ' : boxType === this.BoxType.Info ? 'alert-info ' : 'alert-danger ';
+			getAlert: function (alertType, title, message, closable) {
+					var alertclass = alertType === this.AlertType.Warning ? 'alert-warning ' : alertType === this.AlertType.Success ? 'alert-success ' : alertType === this.AlertType.Info ? 'alert-info ' : 'alert-danger ';
 					var closableClass = closable ? 'alert-dismissable' : '';
 
-					var box = $('<div class="alert ' + boxclass + closableClass + '"></div>')
+					var alert = $('<div class="alert ' + alertclass + closableClass + '"></div>')
 					if (closable) {
-							box.html($('<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>'));
+							alert.html($('<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>'));
 					}
 
 					var title = $('<strong>' + title + ' </strong>');
-					return box.append(title).append(message);
+					return alert.append(title).append(message);
 			}
     }
 }(jQuery);
