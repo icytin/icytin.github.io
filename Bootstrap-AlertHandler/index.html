@@ -1,0 +1,67 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Bootstrap AlertHandler</title>
+
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Begin page content -->
+    <div class="container">
+      <div class="page-header">
+        <h1>Bootstrap AlertHandler examples</h1>
+      </div>
+			<div id="demos">
+				
+				<div class="demo">
+					<h2>Info alert</h2>
+					<p>
+						<pre>BoxHandler.getBox(BoxHandler.BoxType.Info, 'information', 'Please note that this...');</pre>
+					</p>
+				</div>
+				
+				<div class="demo">
+					<h2>Info alert closable</h2>
+					<p>
+						<pre>BoxHandler.getBox(BoxHandler.BoxType.Info, 'information', 'Please note that this...',
+	true); // closable
+</pre>
+					</p>
+				</div>
+				
+				<div class="demo">
+					<h2>Alerts (warning, danger, success..)</h2>
+					<p>
+						Other alert types are BoxHandler.BoxType.Warning, BoxHandler.BoxType.Danger and BoxHandler.BoxType.Success
+					</p>
+				</div>
+			</div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p class="text-muted">Bootstrap AlertHandler example page by <a href="http://icytin.github.io/">icytin</a></p>
+      </div>
+    </div>
+		
+		<!-- scripts -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/lib.js"></script>
+		<script src="js/main.js"></script>
+		
+	</body>
+</html>
