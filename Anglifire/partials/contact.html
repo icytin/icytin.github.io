@@ -1,0 +1,30 @@
+  <div class="jumbotron text-center">
+    <h1>Contact</h1>
+    <p>{{ message }}</p>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8" style="border: 1px solid black;">
+          <div>
+          <!--
+              <google-map id="contactMap" 
+                      center="map.center" 
+                      zoom="map.zoom" 
+                      draggable="map.draggable"                                    
+                      mark-click="map.markclick">
+                      <markers options="map.options">
+                        <marker ng-repeat="marker in map.markers"  coords="marker">
+                        </marker>
+                      </markers>
+              </google-map>
+              -->
+              
+              <!-- Second alternative -->
+              <div ng-controller="MapCtrl">
+                  <div id="map"></div>
+              </div>
+              
+          </div>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+	</div>

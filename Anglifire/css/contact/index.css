@@ -1,0 +1,20 @@
+.contact {
+}
+
+.angular-google-map-container { height: 400px; }
+map, div[map] {display:block; height:400px;}
+/* .angular-google-map {}*/
+
+
+
+#map {
+    height:420px;
+}
+.infoWindowContent {
+    font-size:  14px !important;
+    padding-top: 5px;
+}
+h2 {
+    margin-bottom:0;
+    margin-top: 0;
+}

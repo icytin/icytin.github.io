@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" ng-app="anglifierApp" ng-controller="htmlController">
+<head>
+  <meta charset="utf-8">
+  <title>Anglifire</title>
+    <!-- Global styles -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+  <link rel="stylesheet" href="css/app.css"/>
+  
+  <!-- Dynamic styles for different partials -->
+  <link rel="stylesheet" ng-href="{{css}}" ng-if="css">
+</head>
+<body ng-cloak>
+
+  <!-- HEADER AND NAVBAR -->
+  
+  <header>
+    <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/Anglifire/app">Anglifire</a>
+      </div>
+      <ul class="menu nav navbar-nav navbar-right">
+        <li ng-class="{ active: isActive('#/home')}"><a href="#/home"><i class="fa fa-home"></i> Home</a></li>
+        <li ng-class="{ active: isActive('#/contact')}"><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
+        <li ng-class="{ active: isActive('#/about')}"><a href="#about"><i class="fa fa-shield"></i> About</a></li>
+        <li ng-class="{ active: isActive('#/login')}" ng-show-auth="['logout','error']"><a href="#/login"><i class="fa fa-sign-in"></i> login</a></li>
+        <li ng-class="{ active: isActive('#/account')}" ng-show-auth="'login'"><a href="#/account"><i class="fa fa-user"></i> Account</a></li>
+      </ul>
+    </div>
+    </nav>
+  </header>
+  
+  <div id="main">
+    <!-- This is where content will be placed -->
+    <div ng-view>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="text-center">
+    Created by <a href="https://github.com/icytin/">icytin</a>
+  </footer>
+
+  <!-- Firebase -->
+  <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+  <script src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
+  
+  <!-- AngularJS -->
+  <script src='js/angular-1.2.16/angular.min.js'></script>
+  <script src='js/angular-1.2.16/angular-route.min.js'></script>
+  
+  <!-- Libs -->
+  <script src='js/lib/underscore-min.js'></script>
+  <script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.js"></script>
+  
+  <!-- Map -->
+  <script src='//maps.googleapis.com/maps/api/js?sensor=false&language=en'></script>
+  <script src='js/lib/angular-google-maps.min.js'></script>
+  
+  <script src="js/app.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/directives.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/routes.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/service.login.js"></script>
+  <script src="js/service.firebase.js"></script>
+  <script src="js/service.changeEmail.js"></script>
+  <script src="js/module.simpleLoginTools.js"></script>
+  <script src="js/module.routeSecurity.js"></script>
+  
+  <!-- Dynamic js for different partials. Only reference if specified -->
+  <script ng-src="{{js}}" ng-if="js"></script>
+ 
+</body>
+</html>
