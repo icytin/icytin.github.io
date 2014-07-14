@@ -178,6 +178,42 @@ angular.module('anglifierApp.controllers', [])
       }
 
    }])
+   
+	.controller('ExamplesCtrl', ['$scope', function($scope) {
+
+		var bitcoinRef = new Firebase("https://publicdata-cryptocurrency.firebaseio.com/bitcoin");
+
+		bitcoinRef.child("bid").on("value", function(snapshot) {
+		  _setValue('bid', snapshot);
+		});
+
+		bitcoinRef.child("ask").on("value", function(snapshot) {
+		  _setValue('ask', snapshot);
+		});
+
+		bitcoinRef.child("last").on("value", function(snapshot) {
+		  _setValue('last', snapshot);
+		});
+		
+		var _setValue = function(id, snapshot) {
+		  var currVal = parseFloat(snapshot.val()),
+			valContainer = document.querySelector('#' + id + ' div.val'),
+			oldVal = parseFloat(angular.element(valContainer).text().split('$')[1]);
+			
+		  var cl = currVal > oldVal ? 'green' : ( currVal < oldVal ? 'red' : '');
+		  angular.element(valContainer).html('<span class="' + cl + '">' + '$' + currVal + '</span>');
+		  setTimeout(function() {
+			_setTextOnly('ask');
+			_setTextOnly('bid');
+			_setTextOnly('last');
+			
+			function _setTextOnly(id) {
+			  var $el = angular.element(document.querySelector('#' + id + ' div.val'));
+			  $el.text($el.text());
+			};
+		  }, 1500);
+		};
+	  }])
 
    // Map test ===========================================
   .controller('MapCtrl', function ($scope) {

@@ -13,18 +13,24 @@ angular.module('anglifierApp.routes', ['ngRoute'])
       })
       
       // route for the about page
-			.when('/about', {
-				templateUrl : 'partials/about.html',
-				controller  : 'aboutController',
-        css         : 'css/about/index.css'
-			})
+		.when('/about', {
+			templateUrl : 'partials/about.html',
+			controller  : 'aboutController',
+			css         : 'css/about/index.css'
+		})
 
-			// route for the contact page
-			.when('/contact', {
-				templateUrl : 'partials/contact.html',
-				controller  : 'contactController',
-        css         : 'css/contact/index.css'
-			})
+		// route for the contact page
+		.when('/contact', {
+			templateUrl : 'partials/contact.html',
+			controller  : 'contactController',
+			css         : 'css/contact/index.css'
+		})
+		
+	  .when('/examples', {
+			templateUrl : 'partials/examples.html',
+			controller  : 'ExamplesCtrl',
+			css         : 'css/examples/index.css'
+		})
 
       .when('/account', {
          authRequired: true, // must authenticate before viewing this page
