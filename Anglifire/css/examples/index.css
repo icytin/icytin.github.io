@@ -12,6 +12,10 @@
   font-weight: bold!important;
 }
 
+.right {
+	text-align: right;
+}
+
 .box {
   border: 1px solid #D6D4D7;
   padding: 0 0 7px 0;
