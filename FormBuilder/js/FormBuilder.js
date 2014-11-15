@@ -900,7 +900,8 @@ var FormBuilder = function ($) {
           $('<iframe />', {
               name: 'previewFrame',
               id:   'previewFrame',
-              width: '100%',
+              width: '99%',
+              height: '300px',
               frameBorder: '0'
           }).appendTo('#previewSection div:eq(0)');
         }
