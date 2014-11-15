@@ -910,7 +910,7 @@ var FormBuilder = function ($) {
         var $frame = $('#previewSection iframe');
         var formSource = MarkupHandler.getSource(true);
         $frame.contents().find('html').html(formSource);
-        $frame.height($frame.contents().find('html').height() + 20);
+        $frame.height($frame.contents().find('html').height() + 300);
         
         // Form fixes
         $frame.contents().find('form').submit(function( event ) {
