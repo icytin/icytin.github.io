@@ -901,7 +901,6 @@ var FormBuilder = function ($) {
               name: 'previewFrame',
               id:   'previewFrame',
               width: '99%',
-              height: '300px',
               frameBorder: '0'
           }).appendTo('#previewSection div:eq(0)');
         }
@@ -910,7 +909,7 @@ var FormBuilder = function ($) {
         var $frame = $('#previewSection iframe');
         var formSource = MarkupHandler.getSource(true);
         $frame.contents().find('html').html(formSource);
-        $frame.height($frame.contents().find('html').height() + 300);
+        $frame.height($frame.contents().find('html').height() === 0 ? $frame.contents().find('html').height() + 300 : $frame.contents().find('html').height());
         
         // Form fixes
         $frame.contents().find('form').submit(function( event ) {
