@@ -197,7 +197,7 @@ angular.module('anglifierApp.controllers', [])
 		
 		var _setValue = function(id, snapshot) {
 		  var currVal = parseFloat(snapshot.val()),
-			valContainer = document.querySelector('#' + id + ' div.val'),
+			valContainer = document.querySelector('#' + id + ' span.val'),
 			oldVal = parseFloat(angular.element(valContainer).text().split('$')[1]);
 			
 		  var cl = currVal > oldVal ? 'green' : ( currVal < oldVal ? 'red' : '');
@@ -208,7 +208,7 @@ angular.module('anglifierApp.controllers', [])
 			_setTextOnly('last');
 			
 			function _setTextOnly(id) {
-			  var $el = angular.element(document.querySelector('#' + id + ' div.val'));
+			  var $el = angular.element(document.querySelector('#' + id + ' span.val'));
 			  $el.text($el.text());
 			};
 		  }, 1500);
