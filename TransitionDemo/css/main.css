@@ -1,0 +1,260 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+body {
+	background: #444;
+	color: #a54848;
+	font-weight: 300;
+	font-family: 'Lato', Calibri, Arial, sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: #a54848;
+	outline: none;
+}
+
+a:hover, a:focus {
+	color: #2c774b;
+	outline: none;
+}
+
+.clearfix:before,
+.clearfix:after {
+	display: table;
+	content: " ";
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+nav h2 i {
+	margin-right: .9em;
+}
+
+ul li {
+	font-size: 1.3em;
+}
+ul li i {
+	margin-right: .9em;
+}
+
+header {
+	font-family: 'Lato', Arial, sans-serif;
+}
+
+header {
+	margin: 0 auto 3em;
+	padding: 3em;
+	text-align: center;
+}
+
+header h1 {
+	margin: 0;
+	font-weight: 300;
+	font-size: 2.625em;
+	line-height: 1.3;
+}
+
+header span {
+	display: block;
+	padding: 0 0 0.6em 0.1em;
+	font-size: 60%;
+	color: #aca89a;
+}
+
+footer {
+	background: black;
+	text-align: center;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1em;
+	padding: 9em 0;
+	letter-spacing: .3em;
+}
+
+footer ul {
+	margin-top: 1em!important;
+	margin-bottom: 1.7em!important;
+}
+
+footer ul, footer li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+footer a:hover {
+	color: white!important;
+}
+
+*,
+*:after,
+*::before {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html,
+body,
+.mainContainer,
+.pusherContainer,
+.content {
+	height: 100%;
+}
+
+.content {
+	overflow-y: scroll;
+	background: #f3efe0;
+}
+
+.content,
+.contentInner {
+	position: relative;
+}
+
+.mainContainer {
+	position: relative;
+	overflow: hidden;
+}
+
+.pusherContainer {
+	position: relative;
+	left: 0;
+	z-index: 99;
+	height: 100%;
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+}
+
+.pusherContainer::after {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 0;
+	height: 0;
+	background: rgba(0,0,0,0.2);
+	content: '';
+	opacity: 0;
+	-webkit-transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+	transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+}
+
+.transitionMenu-open .pusherContainer::after {
+	width: 100%;
+	height: 100%;
+	opacity: 1;
+	-webkit-transition: opacity 0.5s;
+	transition: opacity 0.5s;
+}
+
+.transitionMenu {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	visibility: hidden;
+	width: 300px;
+	height: 100%;
+	background: #a54848;
+	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+.transitionMenu::after {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.2);
+	content: '';
+	opacity: 1;
+	-webkit-transition: opacity 0.5s;
+	transition: opacity 0.5s;
+}
+
+.transitionMenu-open .transitionMenu::after {
+	width: 0;
+	height: 0;
+	opacity: 0;
+	-webkit-transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+	transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+}
+
+
+.transitionMenu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.transitionMenu h2 {
+	margin: 0;
+	padding: 1em;
+	color: rgba(0,0,0,0.5);
+	text-shadow: 0 0 1px rgba(0,0,0,0.1);
+	font-weight: 300;
+	font-size: 2em;
+}
+
+.transitionMenu ul li a {
+	display: block;
+	padding: 1em 1em 1em 1.2em;
+	outline: none;
+	box-shadow: inset 0 -1px rgba(0,0,0,0.2);
+	color: #f3efe0;
+	text-transform: uppercase;
+	text-shadow: 0 0 1px rgba(255,255,255,0.1);
+	letter-spacing: 1px;
+	font-weight: 400;
+	-webkit-transition: background 0.3s, box-shadow 0.3s;
+	transition: background 0.3s, box-shadow 0.3s;
+}
+
+.transitionMenu ul li:first-child a {
+	box-shadow: inset 0 -1px rgba(0,0,0,0.2), inset 0 1px rgba(0,0,0,0.2);
+}
+
+.transitionMenu ul li a:hover {
+	background: rgba(0,0,0,0.2);
+	box-shadow: inset 0 -1px rgba(0,0,0,0);
+	color: #fff;
+}
+
+.effect.mainContainer {
+	-webkit-perspective: 1500px;
+	perspective: 1500px;
+}
+
+.effect .pusherContainer {
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.effect.transitionMenu-open .pusherContainer {
+	-webkit-transform: translate3d(100px, 0, -600px) rotateY(-20deg);
+	transform: translate3d(100px, 0, -600px) rotateY(-20deg);
+}
+
+.effect.transitionMenu {
+	opacity: 1;
+	-webkit-transform: translate3d(-100%, 0, 0);
+	transform: translate3d(-100%, 0, 0);
+}
+
+.effect.transitionMenu-open .effect.transitionMenu {
+	visibility: visible;
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+.effect.transitionMenu::after {
+	display: none;
+}
+
+i.trigger-effects:hover {
+	cursor: pointer;
+}
