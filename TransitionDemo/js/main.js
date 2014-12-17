@@ -265,7 +265,9 @@ var MapHandler = function() {
 		
 		setTimeout(function() {
 			
-			var image = '/TransitionDemo/icon/pin.png';
+			var presentationIcon = '/TransitionDemo/icon/pin.png',
+				dummyIcon = '/TransitionDemo/icon/dummyPin.png';
+				
 			var content = '<div id="content" style="color: black;">'+
 				'<div id="siteNotice">'+
 				'</div>'+
@@ -280,12 +282,45 @@ var MapHandler = function() {
 			});
 			
 			self.marker = new google.maps.Marker({
+				map: self.map,
+				icon: presentationIcon,
+				animation: google.maps.Animation.DROP,
+				position: markerPos
+			});
+			
+			// Dummy markers
+			setTimeout(function() {
+				new google.maps.Marker({
 					map: self.map,
-					icon: image,
+					icon: dummyIcon,
 					draggable: true,
 					animation: google.maps.Animation.DROP,
-					position: markerPos
+					position: new google.maps.LatLng(62.393081, 17.339033)
 				});
+				
+				setTimeout(function() {
+					
+					new google.maps.Marker({
+						map: self.map,
+						icon: dummyIcon,
+						draggable: true,
+						animation: google.maps.Animation.DROP,
+						position: new google.maps.LatLng(62.389083, 17.341394)
+					});
+					
+					setTimeout(function() {
+						
+						new google.maps.Marker({
+							map: self.map,
+							icon: dummyIcon,
+							draggable: true,
+							animation: google.maps.Animation.DROP,
+							position: new google.maps.LatLng(62.384985, 17.346586)
+						});
+						
+					}, 1500);
+				}, 1500);
+			}, 1500);
 			
 			var toe = 'click';
 			google.maps.event.addListener(self.marker, toe, toggleState);
