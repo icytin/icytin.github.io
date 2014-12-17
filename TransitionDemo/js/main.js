@@ -94,6 +94,7 @@ var MapHandler = function() {
 			zoom: 14,
 			center: markerPos,
 			scrollwheel: false,
+			draggable: false,
 			styles: [
 				{
 					"featureType": "water",
