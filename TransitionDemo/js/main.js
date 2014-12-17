@@ -91,7 +91,7 @@ var MapHandler = function() {
 	
 		var markerPos = new google.maps.LatLng(62.3905874,17.3110721);
 		var mapOptions = {
-			zoom: 12,
+			zoom: 14,
 			center: markerPos,
 			scrollwheel: false,
 			draggable: false,
