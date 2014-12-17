@@ -286,7 +286,7 @@ var MapHandler = function() {
 					position: markerPos
 				});
 			
-			var toe = CheckHandler.mobilecheck() ? 'touchstart' : 'click';
+			var toe = 'click';
 			google.maps.event.addListener(self.marker, toe, toggleState);
 			
 		}, 1000);
