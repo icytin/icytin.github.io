@@ -22,7 +22,7 @@ var MenuHandler = function() {
 		self = this;
 		self = {
 			container: $('#mainContainer' )[0],
-			eventtype: CheckHandler.mobilecheck() ? 'touchend' : 'click' // If mobile use touch otherwise click
+			eventtype: CheckHandler.mobilecheck() ? 'touchstart' : 'click' // If mobile use touch otherwise click
 		};
 		
 		var reset = $('#closeMenu')[0],
