@@ -404,7 +404,7 @@ i.trigger-effects:hover {
 .heart {
   display: inline-block;
   font-size: 2em;
-  color: #a54848;
+  color: #a54848!important;
   -webkit-animation: pound .65s infinite alternate;
   -webkit-transform-origin: center;
 }
@@ -416,3 +416,4 @@ i.trigger-effects:hover {
 	margin: 0;
 	padding: 0;
 }
+
