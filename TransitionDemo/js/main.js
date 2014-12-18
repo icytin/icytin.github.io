@@ -22,7 +22,7 @@ var MenuHandler = function() {
 		self = this;
 		self = {
 			container: $('#mainContainer' )[0],
-			eventtype: CheckHandler.mobilecheck() ? 'touchstart' : 'click' // If mobile use touch otherwise click
+			eventtype: CheckHandler.mobilecheck() ? 'touchend' : 'click' // If mobile use touch otherwise click
 		};
 		
 		var reset = $('#closeMenu')[0],
@@ -358,7 +358,7 @@ var MapHandler = function() {
 var IconHandler = function() {
 	
 	var _init = function() {
-		var toe = CheckHandler.mobilecheck() ? 'touchstart' : 'click';
+		var toe = CheckHandler.mobilecheck() ? 'touchend' : 'click';
 		$('#iconActionContainer').unbind(toe).on(toe, function(e) {
 			var $target = $(e.target);
 			if($target.hasClass('animationIcon')) {
