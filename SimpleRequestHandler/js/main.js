@@ -19,13 +19,18 @@ var Main = function () {
 			}
 			
 			$('#testSuccessFunctionCallback').on('click', function(e) {
+				
 				$(this).html('Loading...');
-				requestHandler.get(
-					undefined, // No parameters.
-					'http://ip.jsontest.com/', true, undefined, function(data) {
-						$('#testSuccessFunctionCallback').toggle();
-						$('#testSuccessFunctionRes').html('<p>' + 'Result received: ' + data.ip + '</p>');
-					}); // Action
+				
+				setTimeout(function() { // Just for simulation
+					requestHandler.get(
+						undefined, // No parameters.
+						'http://ip.jsontest.com/', true, undefined, function(data) {
+							$('#testSuccessFunctionCallback').toggle();
+							$('#testSuccessFunctionRes').html('<p>' + 'Result received: ' + data.ip + '</p>');
+						}); // Action
+				}, 1500);
+
 			})
 			
 		});
