@@ -12,11 +12,12 @@ var requestHandler = function () {
     * # traditional: As of jQuery 1.4, the $.param() method serializes deep objects recursively to accommodate modern scripting 
     * languages and frameworks such as PHP and Ruby on Rails.You can disable this functionality globally by setting 
     * jQuery.ajaxSettings.traditional = true;. Default is undefined.
+    * # successFuntion: An optional callback function to be triggered on success. 
     *
     * Example (MVC):
     * var response = requestHandler.doRequest(TypeOfRequest.Post, { id: $(this).val() }, '@Url.Action("GetInformation", "Controller")')
     */
-    var _doRequest = function (typeOfRequest, params, url, async, traditional) {
+    var _doRequest = function (typeOfRequest, params, url, async, traditional, successFunction) {
 
         var o = undefined;
         async = async === undefined ? false : async;
@@ -31,6 +32,9 @@ var requestHandler = function () {
             data: params,
             success: function (data) {
                 o = data;
+                if (successFunction !== undefined) {
+                    successFunction(data);
+                }
             },
             error: function (data, q, t) {
                 // Show failure.. dialog or something..
@@ -51,12 +55,12 @@ var requestHandler = function () {
 
     return {
       // Post request
-      post: function(params, url, async, traditional) {
-        return _doRequest('POST', params, url, async, traditional);
+      post: function(params, url, async, traditional, successFunction) {
+        return _doRequest('POST', params, url, async, traditional, successFunction);
       },
       // Get request
-      get: function(params, url, async, traditional) {
-        return _doRequest('GET', params, url, async, traditional);
+      get: function(params, url, async, traditional, successFunction) {
+        return _doRequest('GET', params, url, async, traditional, successFunction);
       }
     };
 }(jQuery);
