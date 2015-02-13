@@ -32,6 +32,8 @@
 	'/Controller/SetName'); // Action</pre>
 				</p>
 				
+				
+				
 				<h2>Get</h2>
 				<p>
 					<pre>var res = requestHandler.get(
@@ -40,9 +42,6 @@
           </pre>
 				</p>
 				
-				<p>
-					...
-				</p>
 				<h2>Example get from jsontest.com</h2>
 				<p>
 					<pre>var res = requestHandler.get(
@@ -56,6 +55,17 @@
 							<div class="progress-bar" style="width: 0%"></div>
 					</div>
 				</div>
+				
+				<h2>Example async get with success function callback</h2>
+				<button id="testSuccessFunctionCallback" class="btn btn-primary">Do request!</button>
+				<p>
+					<pre>var res = requestHandler.get(
+	undefined, // No parameters.
+	'http://ip.jsontest.com/', true, undefined, function(data) {
+		alert("Result received: " + data);
+	}); // Action
+          </pre>
+				</p>
 			
     </div>
 
