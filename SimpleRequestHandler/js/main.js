@@ -23,7 +23,7 @@ var Main = function () {
 					undefined, // No parameters.
 					'http://ip.jsontest.com/', true, undefined, function(data) {
 						$('#testSuccessFunctionCallback').toggle();
-						$('#testSuccessFunctionRes').html('<p>' + 'Result received: ' + data.ip + '</p>').toggle() ;
+						$('#testSuccessFunctionRes').html('<p>' + 'Result received: ' + data.ip + '</p>');
 					}); // Action
 			})
 			
