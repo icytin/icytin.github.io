@@ -19,6 +19,7 @@ var Main = function () {
 			}
 			
 			$('#testSuccessFunctionCallback').on('click', function(e) {
+				$(this).html('Loading...');
 				requestHandler.get(
 					undefined, // No parameters.
 					'http://ip.jsontest.com/', true, undefined, function(data) {
