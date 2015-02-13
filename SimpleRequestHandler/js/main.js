@@ -22,7 +22,7 @@ var Main = function () {
 				requestHandler.get(
 					undefined, // No parameters.
 					'http://ip.jsontest.com/', true, undefined, function(data) {
-						alert("Result received: " + data);
+						alert("Result received: " + data.ip);
 					}); // Action
 			})
 			
