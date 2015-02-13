@@ -60,11 +60,12 @@
 				<button id="testSuccessFunctionCallback" class="btn btn-primary">Do request!</button>
 				<div id="testSuccessFunctionRes"></div>
 				<p>
-					<pre>var res = requestHandler.get(
-	undefined, // No parameters.
-	'http://ip.jsontest.com/', true, undefined, function(data) {
-		alert("Result received: " + data);
-	}); // Action
+					<pre>requestHandler.get(
+						undefined, // No parameters.
+						'http://ip.jsontest.com/', true, undefined, function(data) {
+							$('#testSuccessFunctionCallback').toggle();
+							$('#testSuccessFunctionRes').html('<p><b>Received IP:</b><br />' + data.ip + '</p>');
+						}); // Action
           </pre>
 				</p>
 			
