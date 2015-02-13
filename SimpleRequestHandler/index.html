@@ -62,7 +62,7 @@
 				<p>
 					<pre>requestHandler.get(
 	undefined, // No parameters.
-	'http://ip.jsontest.com/', true, undefined, function(data) { // The success function
+	'http://ip.jsontest.com/', true, undefined, function(data) { // On success
 		$('#testSuccessFunctionCallback').toggle();
 		$('#testSuccessFunctionRes').html('Received IP:' + data.ip);
 	});
