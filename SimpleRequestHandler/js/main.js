@@ -18,5 +18,13 @@ var Main = function () {
 				}, 400);
 			}
 			
+			$('#testSuccessFunctionCallback').on('click', function(e) {
+				requestHandler.get(
+					undefined, // No parameters.
+					'http://ip.jsontest.com/', true, undefined, function(data) {
+						alert("Result received: " + data);
+					}); // Action
+			})
+			
 		});
 }(jQuery);
