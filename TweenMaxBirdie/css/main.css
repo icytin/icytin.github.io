@@ -1,0 +1,36 @@
+body {
+  background-color:#1d1d1d;
+  font-family: 'Indie Flower', cursive;
+  color:#989898;
+  margin:10px;
+  font-size:16px;
+}
+
+h1 {
+	display: none;
+}
+
+#section {
+  height:100%;
+  position:relative;
+  overflow:hidden;
+}
+
+.box {
+	background-image: url("../img/birdie_follow_me.png");
+  width:130px;
+  height:130px;
+  position:relative;
+  border-radius:6px;
+  margin-top:4px;
+  text-align:center;
+  line-height:100px;
+  color:black;
+  font-size:80px;
+  
+  -webkit-filter: url("#filter");
+  filter: url("/#filter");
+}
+.box:hover {
+	cursor: pointer;
+}
